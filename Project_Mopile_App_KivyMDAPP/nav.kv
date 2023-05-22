@@ -1,0 +1,64 @@
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+<DrawerLabelItem@MDNavigationDrawerItem>
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    focus_behavior: False
+    selected_color: "#4a4939"
+    _no_ripple_effect: True
+
+
+MDScreen:
+
+    MDNavigationLayout:
+
+        MDScreenManager:
+
+            MDScreen:
+
+                MDTopAppBar:
+                    title: "My Profile"
+                    elevation: 4
+                    pos_hint: {"top": 1}
+                    md_bg_color: "cyan"
+                    specific_text_color: "white"
+                    left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerHeader:
+                    title: "Abdullahi"
+                    title_color: "black"
+                    text: "Mascuud Abdullahi      Class: CA202"
+                    text_color:"black"
+                    source:"ni.jpeg"
+                    spacing: "4dp"
+                    padding: "12dp", 0, 0, "56dp"
+
+                MDNavigationDrawerLabel:
+                    text: "ABOUT ME"
+
+                DrawerClickableItem:
+                    icon: "gmail"
+                    text_right_color: "#4a4939"
+                    text: "MY Gmail"
+                DrawerClickableItem:
+                    icon: "facebook"
+                    text_right_color: "#4a4939"
+                    text: "My Facebook"
+                DrawerClickableItem:
+                    icon: "whatsapp"
+                    text_right_color: "#4a4939"
+                    text: "My Whatapp"
+
+

@@ -1,0 +1,85 @@
+MDScreen:
+    name:"regis"
+    md_bg_color:"white"
+    MDFloatLayout:
+        md_bg_color:"cyan"
+        size_hint:.7,.09
+        pos_hint:{"center_x":.5,"center_y":.92}
+        MDLabel:
+            text:"Sign Up "
+            font_style:"H4"
+            theme_text_color:"Custom"
+            text_color:"blue"
+            bold:True
+            pos_hint:{"center_x":.77,"center_y":.50}
+    MDFloatLayout:
+        size_hint:.7,.06
+        pos_hint:{"center_x":.5,"center_y":.77}
+        MDTextField:
+            id:user
+            icon_left:"email"
+            write_tab:False
+            mode:"rectangle"
+            hint_text:"Enter New User"
+            pos_hint:{"center_x":.5,"center_y":.65}
+
+
+    MDFloatLayout:
+        size_hint:.7,.06
+        pos_hint:{"center_x":.5,"center_y":.67}
+        MDTextField:
+            id:pin
+            write_tab:False
+            password:True
+            max_text_length:4
+            mode:"rectangle"
+            hint_text:"Enter New Pin"
+            pos_hint:{"center_x":.5,"center_y":.55}
+
+    MDFloatLayout:
+        size_hint:.7,.06
+        pos_hint:{"center_x":.5,"center_y":.57}
+        MDTextField:
+            id:con
+            write_tab:False
+            password:True
+            max_text_length:4
+            mode:"rectangle"
+            hint_text:"Enter conform Pin"
+            pos_hint:{"center_x":.5,"center_y":.45}
+        MDIconButton:
+            icon: "eye-off"
+            pos_hint: {"center_x": .94,"center_y": .25}
+            theme_text_color: "Hint"
+            theme_text_color: "Hint"
+            on_release:
+                self.icon = "eye" if self.icon == "eye-off"  else "eye-off"
+                app.show_and_hide()
+    MDRoundFlatIconButton:
+        text:"Sign In"
+        font_style:'H5'
+        text_color:'blue'
+        md_bg_color:"cyan"
+        bold:True
+        pos_hint:{'center_x':.3,'center_y':.40}
+        on_release:app.SignInPage()
+
+    MDRoundFlatIconButton:
+        text: " Sign Up "
+        font_style:'H5'
+        bold:True
+        md_bg_color:"cyan"
+        text_color:'blue'
+        pos_hint:{'center_x':.7,'center_y':.40}
+        on_release:app.SigUp()
+
+    MDFloatLayout:
+        size_hint:.55,.5
+        pos_hint:{"center_x":.38,"center_y":.28}
+        Image:
+            source:'sin.png'
+            pos_hint:{"center_x":.7,"center_y":.30}
+
+
+
+

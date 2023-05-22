@@ -1,0 +1,27 @@
+MDScreen:
+    name:"Dash"
+    md_bg_color:"cyan"
+
+    MDBoxLayout:
+        MDBoxLayout:
+            orientation:"vertical"
+            MDBoxLayout:
+                AnchorLayout:
+                    anchor_y:"top"
+                    anchor_x:"left"
+                    MDIconButton:
+                        icon:"arrow-left"
+                        on_press:
+                            app.root.current="registration"
+                            root.manager.transition.direction="right"
+
+
+
+    MDBoxLayout:
+        size_hint_y:.25
+        MDBoxLayout:
+            orientation:"vertical"
+            MDLabel:
+                text:"JUST is Family"
+            MDLabel:
+                text:"Home"

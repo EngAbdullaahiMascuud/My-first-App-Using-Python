@@ -1,0 +1,228 @@
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+<DrawerLabelItem@MDNavigationDrawerItem>
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    focus_behavior: False
+    selected_color: "#4a4939"
+    _no_ripple_effect: True
+MDScreen:
+    name:"Dash"
+    #md_bg_color:56/255,40/255,81/255,1
+    md_bg_color:"cyan"
+    MDIconButton:
+        icon: "emm.png"
+        icon_size: "55sp"
+        pos_hint: {"center_x": .50, "center_y": .05}
+        on_release:app.email()
+    MDIconButton:
+        icon: "web.png"
+        icon_size: "65sp"
+        pos_hint: {"center_x": .80, "center_y": .05}
+        on_release:app.web()
+    MDIconButton:
+        on_release:app.gradu()
+        icon: "fac.png"
+        icon_size: "60sp"
+        pos_hint: {"center_x": .20, "center_y": .05}
+        on_release:app.face()
+    MDFloatLayout:
+        size_hint:.5,.13
+        pos_hint:{"center_x":.04,"center_y":.89}
+
+
+
+
+    MDGridLayout:
+        size_hint_y:.93
+        cols:2
+        padding:[dp(50),dp(50),dp(45),dp(45)]
+        spacing:dp(20)
+        ElementCard:
+            on_release:app.gellry()
+            Image:
+                source:"g.png"
+                size: "125dp", "105dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+            MDLabel:
+                text:"Gellary"
+                theme_text_color: "Custom"
+                text_color:"black"
+                halign:"center"
+                font_style:"H6"
+
+
+        ElementCard:
+            on_release:app.faculty()
+            Image:
+                source:"facu.png"
+                size: "98dp", "100dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+            MDLabel:
+                text:"Faculties"
+                halign:"center"
+                font_style:"H6"
+
+        ElementCard:
+            on_release:app.gradu()
+            Image:
+                source:"grad.png"
+                size: "100dp", "98dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+
+            MDLabel:
+                text:"Gradution"
+                halign:"center"
+                font_style:"H6"
+
+        ElementCard:
+            on_release:app.welco()
+            Image:
+                source:"welc.png"
+                size: "118dp", "100dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+            MDLabel:
+                text:"Welcome"
+                halign:"center"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                font_style:"H6"
+
+
+
+
+        ElementCard:
+            on_release:app.news()
+            Image:
+                source:"new.png"
+                size: "110dp", "98dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+            MDLabel:
+                text:"News Just"
+                pos_hint:{"center_x":.5,"center_y":.2}
+                font_style:"H6"
+
+
+        ElementCard:
+            on_release:app.stud()
+            Image:
+                source:"stud.png"
+                size: "118dp", "100dp"
+                pos_hint:{"center_x":.5,"center_y":.05}
+                size_hint: None, None
+            MDLabel:
+                text:"Students"
+                halign:"center"
+                pos_hint:{"center_x":.5,"center_y":.2}
+                font_style:"H6"
+
+
+        MDNavigationLayout:
+
+    MDScreenManager:
+
+        MDScreen:
+
+            MDTopAppBar:
+                #size_hint_y:.08
+                title: "Home Of Quality Education "
+
+                font_style:'H4'
+                #text_halign:"top"
+                elevation: 4
+                #height:.5
+                pos_hint: {"top":1}
+                md_bg_color: "cyan"
+                specific_text_color: "black"
+                left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+
+
+
+
+    MDNavigationDrawer:
+        id: nav_drawer
+
+        radius: (0, 16, 16, 0)
+
+        MDNavigationDrawerMenu:
+
+            MDNavigationDrawerHeader:
+                title: "Abdullahi"
+                title_color: "black"
+                text: "Mascuud Abdullahi Just/Class: CA202"
+                text_color:"black"
+                source:"nii.png"
+                spacing: "4dp"
+                padding: "12dp", 0, 0, "56dp"
+
+            MDNavigationDrawerLabel:
+                text: "ABOUT ME"
+
+            DrawerClickableItem:
+                on_release:app.myist()
+                icon: "instagram"
+                text_right_color: "#4a4939"
+                text: "MY Instagram"
+            DrawerClickableItem:
+                on_release:app.fcebo()
+                icon: "facebook"
+                text_right_color: "#4a4939"
+                text: "My Facebook"
+            DrawerClickableItem:
+                on_release:app.what()
+                icon: "whatsapp"
+                text_right_color: "#4a4939"
+                text: "My Whatapp"
+
+            MDNavigationDrawerLabel
+                text: "Developer"
+                DrawerClickableItem:
+                    size_hint:10,5
+                    MDLabel:
+                        size_hint:1.5,1.9
+
+                        #md_bg_color:"#6d6d6dc0"
+                        text:" I am Abdullahi Mascuud MY Nicname is Niinii and I am a developer and I know python and libry known as tk or tikinter and I have built  many projects Also I can    build mobile app.\nUsing kivmd.mdapp python library I can build many applications.\nPlease contact us if you need us to   provide you with projects"
+                        theme_text_color:"Custom"
+                        text_color: "blue"
+                        #text_color:"white"
+                        pos_hint:{"center_y":-1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ElementCard@MDCard>:
+    #md_bg_color:"#FF4AC4"
+    padding:dp(15)
+    spacing:dp(5)
+    radius:dp(24)
+    ripple_behavior: True
+    size_hint: None, None
+    size: "130dp", "120dp"
+    orientation:'vertical'
+
+
+
+
+

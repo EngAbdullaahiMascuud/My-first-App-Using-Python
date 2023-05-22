@@ -1,0 +1,151 @@
+MDScreen:
+    name:"just"
+
+
+    #md_bg_color:"#ABCAE9"
+    #md_bg_color:"#FF4AC4"
+    #md_bg_color:"white"
+    md_bg_color:"cyan"
+    MDBoxLayout:
+        MDBoxLayout:
+            orientation:"vertical"
+            MDBoxLayout:
+                AnchorLayout:
+                    anchor_y:"top"
+                    anchor_x:"left"
+                    MDIconButton:
+                        icon:"arrow-left"
+                        on_press:
+                            app.root.current="regis"
+                            root.manager.transition.direction="right"
+
+    MDFloatLayout:
+        size_hint:.12,.2
+        pos_hint:{"center_x":.23,"center_y":.69}
+        Image:
+            source:'pp-removebg-preview.png'
+            pos_hint:{"center_x":.09,"center_y":.09}
+
+    MDFloatLayout:
+        size_hint:.13,.2
+        pos_hint:{"center_x":.23,"center_y":.59}
+        Image:
+            source:'qq-removebg-preview.png'
+            pos_hint:{"center_x":.09,"center_y":.03}
+
+    MDFloatLayout:
+        size_hint:.5,.4
+        pos_hint:{"center_x":.38,"center_y":.28}
+        Image:
+            source:'just.png'
+            pos_hint:{"center_x":.7,"center_y":.20}
+
+
+    MDLabel:
+        text:'Jamhuriya University'
+        underline:True
+        halign: 'center'
+        theme_text_color: 'Custom'
+        font_style:'H4'
+        bold:True
+        text_color: 0, 0, 1, 1
+        pos_hint:{'center_x':.5,'center_y':.94}
+
+
+    MDLabel:
+        text:'---- Of Science and Technology ----'
+        halign: 'center'
+        theme_text_color: 'Custom'
+        text_color:"red"
+        font_style:'H6'
+        bold:True
+        pos_hint:{'center_x':.5,'center_y':.86}
+
+
+    MDLabel:
+        text:'Admin Board'
+        theme_text_color: 'Custom'
+        text_color:"red"
+        bold:True
+        font_style:'H6'
+        pos_hint:{"center_x":.85,"center_y":.80}
+
+    MDLabel:
+        bold:True
+        text:'------------------------'
+        theme_text_color: 'Custom'
+        text_color:"red"
+        font_style:'H6'
+        pos_hint:{"center_x":.78,"center_y":.77}
+
+
+    MDLabel:
+        text:'LOGIN'
+        theme_text_color: "Custom"
+        text_color:"blue"
+        bold:True
+        font_style:'H4'
+        pos_hint:{"center_x":.87,"center_y":.70}
+
+    MDFloatLayout:
+        size_hint:.6,.03
+        pos_hint:{"center_x":.55,"center_y":.6}
+        MDTextField:
+            id:user
+            write_tab:False
+            hint_text: "User or email"
+            mode:"fill"
+
+            pos_hint:{"center_x":.55,"center_y":.85}
+
+    MDFloatLayout:
+        size_hint:.6,.03
+        pos_hint:{"center_x":.55,"center_y":.5}
+        MDTextField:
+            id:passs
+            write_tab:False
+            hint_text: "Password"
+            theme_text_color: "Custom"
+            text_color:"white"
+            password:True
+            mode: "fill"
+            pos_hint:{"center_x":.55,"center_y":.48}
+        MDIconButton:
+            icon: "eye-off"
+            pos_hint: {"center_x": .99,"center_y": .22}
+            theme_text_color: "Hint"
+            theme_text_color: "Hint"
+            on_release:
+                self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                passs.password = False if passs.password is True else True
+
+
+
+
+    MDRoundFlatIconButton:
+        text:"Login In"
+        font_style:'H5'
+        text_color:'blue'
+        bold:True
+        pos_hint:{'center_x':.5,'center_y':.37}
+        on_release:app.Login()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
